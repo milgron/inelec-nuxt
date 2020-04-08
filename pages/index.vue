@@ -1,18 +1,27 @@
 <template>
   <div>
-    <Header />
+    <MainProductsWrapper />
+    <WeAreBar />
+    <MainCategories />
+    <BlogPosts />
   </div>
 </template>
 
 <script>
-  import Header from '../components/Header'
+  import MainProductsWrapper from '../components/MainProductsWrapper'
+  import WeAreBar from '../components/WeAreBar'
+  import MainCategories from '../components/MainCategories'
+  import BlogPosts from '../components/BlogPosts'
   export default {
     components: {
-      Header
+      BlogPosts,
+      MainCategories,
+      WeAreBar,
+      MainProductsWrapper
     }
   }
 </script>
 
 <style lang="scss" scoped>
-
+  
 </style>

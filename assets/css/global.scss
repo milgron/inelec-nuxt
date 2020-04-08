@@ -1,4 +1,22 @@
+@font-face {
+  font-family: "Din-Regular";
+  src: url("/D-DIN.otf");
+}
+@font-face {
+  font-family: "Din-Bold";
+  src: url("/D-DIN-Bold.otf");
+}
+@font-face {
+  font-family: "Din-Condensed";
+  src: url("/D-DINCondensed.otf");
+}
+@font-face {
+  font-family: "Din-Condensed-Bold";
+  src: url("/D-DINCondensed-Bold.otf");
+}
+
 html {
-  font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+  font-family: 'Din-Regular', -apple-system, BlinkMacSystemFont, 'Segoe UI',
     Roboto, 'Helvetica Neue', Arial, sans-serif;
 }
+
