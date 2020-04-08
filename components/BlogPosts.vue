@@ -10,7 +10,7 @@
     <div class="news-wrapper">
       <div class="post-wrapper">
         <div class="image-wrapper">
-          image
+          <img src="/test-quienes-somos.jpg" alt="">
         </div>
         <TitleWrapper 
           title="04/12/1991"
@@ -28,7 +28,7 @@
       </div>
       <div class="post-wrapper">
         <div class="image-wrapper">
-          image
+          <img src="/test-quienes-somos.jpg" alt="">
         </div>
         <TitleWrapper 
           title="04/12/1991"
@@ -46,7 +46,7 @@
       </div>
       <div class="post-wrapper">
         <div class="image-wrapper">
-          image
+          <img src="/test-quienes-somos.jpg" alt="">
         </div>
         <TitleWrapper 
           title="04/12/1991"
@@ -94,6 +94,10 @@
   }
   .image-wrapper {
     margin-bottom: 3rem;
+
+    img {
+      width: 100%;
+    }
   }
   .excerpt-wrapper {
     text-transform: uppercase;

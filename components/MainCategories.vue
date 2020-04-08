@@ -3,7 +3,7 @@
     <div class="products-wrapper">
       <div class="single-product-wrapper">
         <div class="image-wrapper">
-          image
+          <img src="/test-product.jpg" alt="">
         </div>
         <TitleWrapper 
           title="Lorem ipsum"
@@ -18,7 +18,7 @@
       </div>
       <div class="single-product-wrapper">
         <div class="image-wrapper">
-          image
+          <img src="/test-product.jpg" alt="">
         </div>
         <TitleWrapper 
           title="Lorem ipsum"
@@ -33,7 +33,7 @@
       </div>
       <div class="single-product-wrapper">
         <div class="image-wrapper">
-          image
+          <img src="/test-product.jpg" alt="">
         </div>
         <TitleWrapper 
           title="Lorem ipsum"

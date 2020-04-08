@@ -1,13 +1,16 @@
 <template>
   <div>
     <div class="header-wrapper">
-      <nuxt-link to="/ ">
+      <nuxt-link to="/">
         <div class="logo-wrapper"> 
           <img src="/logo-inelec.png" class="logo" alt="">
         </div>
       </nuxt-link>
       <div :class="[{'is-open': isDesktopSearchOpen},'links-and-search-wrapper', 'desktop']">
         <div :class="[{'hide': isDesktopSearchOpen},'links-wrapper']">
+          <nuxt-link to="/" class="menu-link">
+            Home
+          </nuxt-link>
           <nuxt-link to="/quienes-somos" class="menu-link">
             Quiénes somos
           </nuxt-link>
@@ -44,16 +47,16 @@
       </div>
     </div>
     <div :class="['links-and-search-wrapper','mobile',{'is-open': isMenuOpen},]">
-      <nuxt-link to="/" class="menu-link">
+      <nuxt-link to="/quienes-somos" class="menu-link">
         Quiénes somos
       </nuxt-link>
-      <nuxt-link to="/" class="menu-link">
+      <nuxt-link to="/iluminacion-temporal" class="menu-link">
         Iluminación temporal
       </nuxt-link>
-      <nuxt-link to="/" class="menu-link">
+      <nuxt-link to="/accesorios" class="menu-link">
         Accesorios
       </nuxt-link>
-      <nuxt-link to="/" class="menu-link">
+      <nuxt-link to="/iluminacion-portatil" class="menu-link">
         Iluminación portátil
       </nuxt-link>
       <div class="search-wrapper-mobile">

@@ -3,7 +3,7 @@
     <div class="main-products-wrapper">
       <div class="product-wrapper primary">
         <div class="image-wrapper">
-          <p>imagen</p>
+          <img src="/test-product.jpg" alt="">
         </div>
         <div class="data-wrapper">
           <div class="title-wrapper">
@@ -22,7 +22,7 @@
       <div class="products-wrapper secondary">
         <div class="product-wrapper secondary-top">
           <div class="image-wrapper">
-            <p>imagen</p>
+            <img src="/test-product.jpg" alt="">
           </div>
           <div class="data-wrapper">
             <div class="new-wrapper">
@@ -40,7 +40,7 @@
         </div>
         <div class="product-wrapper secondary-bottom">
           <div class="image-wrapper">
-            <p>imagen</p>
+            <img src="/test-product.jpg" alt="">
           </div>
           <div class="data-wrapper">
             <div class="new-wrapper">
@@ -78,7 +78,6 @@
     display: flex;
     flex-direction: column;
     padding: 2rem;
-    border: 1px solid blue;
 
     &.primary {
       background: $medium-gray;
@@ -143,6 +142,10 @@
 
   .image-wrapper {
     margin-bottom: 2rem;
+
+    img {
+      width: 100%;
+    }
   }
 
   .new-wrapper {
@@ -163,7 +166,6 @@
     .image-wrapper {
       margin-bottom: 0;
       width: 40%;
-      border: 1px solid red;
     }
 
     .data-wrapper {
