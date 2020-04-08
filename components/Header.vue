@@ -50,13 +50,13 @@
       <nuxt-link to="/quienes-somos" class="menu-link">
         Quiénes somos
       </nuxt-link>
-      <nuxt-link to="/iluminacion-temporal" class="menu-link">
+      <nuxt-link to="/products/iluminacion-temporal" class="menu-link">
         Iluminación temporal
       </nuxt-link>
-      <nuxt-link to="/accesorios" class="menu-link">
+      <nuxt-link to="/products/accesorios" class="menu-link">
         Accesorios
       </nuxt-link>
-      <nuxt-link to="/iluminacion-portatil" class="menu-link">
+      <nuxt-link to="/products/iluminacion-portatil" class="menu-link">
         Iluminación portátil
       </nuxt-link>
       <div class="search-wrapper-mobile">
