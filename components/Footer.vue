@@ -62,7 +62,6 @@
           </div>
           <div class="data-row">
             <div class="icon">
-
               <img src="/files.png" alt="">
             </div>
             <p class="copy">Acceda a toda la información del 
@@ -162,7 +161,6 @@ de instrucciones.</p>
     .email-input-wrapper {
       display: flex;
       flex-direction: column;
-      width: 48%;
     }
   }
 
