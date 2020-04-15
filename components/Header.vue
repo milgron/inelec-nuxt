@@ -87,7 +87,7 @@
         this.isDesktopSearchOpen = !this.isDesktopSearchOpen
       },
       submitSearch() {
-        console.log('Buscaste ', this.searchInput)
+        console.log('Buscaste esto: ', this.searchInput)
       }
     }
     
