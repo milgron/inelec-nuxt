@@ -1,7 +1,9 @@
 <template>
   <div>
     <Header/>
-    <nuxt />
+    <div class="content">
+      <nuxt />
+    </div>
     <Footer />
   </div>
 </template>
@@ -16,5 +18,13 @@ export default {
 }
 </script> 
 <style>
+.content {
+  margin-top: -16rem;
+}
 
+@media screen and (min-width: 920px) {
+  .content {
+    margin-top: 0;
+  }
+}
 </style>

@@ -2,7 +2,7 @@
   <div>
     <div class="register-wrapper">
       <div class="copy-wrapper">
-        <p class="copy">Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, nam?</p>
+        <p class="copy">REGÍSTRESE EN NUESTRO BOLETÍN DE CORREO ELECTRÓNICO PARA LAS ÚLTIMAS NOTICIAS Y ACTUALIZACIONES DE PRODUCTOS ...</p>
       </div>
       <div class="register-form-wrapper">
         <div class="register-input-wrapper">
@@ -37,7 +37,11 @@
   color: #fff;
   text-transform: uppercase;
   text-align: center;
-    margin: 1rem 0;
+  margin: 1rem 0;
+
+  .copy {
+    font-size: 1.8rem;
+  }
 
 }
 .register-button-wrapper {
@@ -45,6 +49,8 @@
     color: #fff;
     text-transform: uppercase;
      background: $dark-gray;
+         font-size: 1.8rem;
+
   }
 }
 
@@ -58,6 +64,8 @@
     margin-right: 1rem;
     padding: 1rem;
     border: none;
+        font-size: 1.8rem;
+
   }
 }
 

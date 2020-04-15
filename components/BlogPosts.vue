@@ -19,8 +19,9 @@
         />
         <div class="excerpt-wrapper">
           <p class="copy">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reprehenderit adipisci cumque error, deleniti ab alias quidem doloremque inventore dignissimos corporis.
-          </p>
+DON’T BE DAZZLED IN SMALLER CONFINED 
+SPACES - THE WF-250XL IS THE IDEAL 
+SOLUTION          </p>
         </div>
         <div class="read-more-wrapper">
           <div class="copy">Read more</div>
@@ -37,8 +38,9 @@
         />
         <div class="excerpt-wrapper">
           <p class="copy">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reprehenderit adipisci cumque error, deleniti ab alias quidem doloremque inventore dignissimos corporis.
-          </p>
+PRESS RELEASE - WOLF APPOINTED EXCLUSIVE UK 
+DISTRIBUTOR FOR RAMFAN™ - MARKET LEADER IN 
+VENTILATION FOR HAZARDOUS AREAS READ MORE          </p>
         </div>
         <div class="read-more-wrapper">
           <div class="copy">Read more</div>
@@ -55,8 +57,8 @@
         />
         <div class="excerpt-wrapper">
           <p class="copy">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reprehenderit adipisci cumque error, deleniti ab alias quidem doloremque inventore dignissimos corporis.
-          </p>
+DAVID LYON APPOINTED SALES MANAGER FOR 
+SCOTLAND          </p>
         </div>
         <div class="read-more-wrapper">
           <div class="copy">Read more</div>
@@ -101,6 +103,10 @@
   }
   .excerpt-wrapper {
     text-transform: uppercase;
+
+    .copy {
+      font-size: 2rem;
+    }
   }
   .read-more-wrapper {
     margin-top: 1rem;
@@ -108,6 +114,7 @@
     .copy {
       font-weight: bold;
       text-transform: uppercase;
+      font-size: 2rem;
     }
   }
 

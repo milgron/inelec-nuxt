@@ -2,7 +2,7 @@
   <div class="main-wrapper">
     <TitleWrapper
       :title="category"
-      backgroundColorString="#EF7C00"
+      backgroundColorString="orange"
       color="#202020"
     />
     <hr>
@@ -15,7 +15,7 @@
       <nuxt-link :to="'/products/'+category+'/testing'">
         <div class="single-sub-category-wrapper">
           <div class="image-wrapper">
-            <img src="/test-product.jpg" alt="">
+            <img src="/main-product-2.png" alt="">
           </div>
           <div class="title-wrapper">
             <p class="title">
@@ -27,7 +27,7 @@
       <nuxt-link :to="'/products/'+category+'/testing'">
         <div class="single-sub-category-wrapper">
           <div class="image-wrapper">
-            <img src="/test-product.jpg" alt="">
+            <img src="/main-product-2.png" alt="">
           </div>
           <div class="title-wrapper">
             <p class="title">
@@ -39,7 +39,7 @@
       <nuxt-link :to="'/products/'+category+'/testing'">
         <div class="single-sub-category-wrapper">
           <div class="image-wrapper">
-            <img src="/test-product.jpg" alt="">
+            <img src="/main-product-2.png" alt="">
           </div>
           <div class="title-wrapper">
             <p class="title">
@@ -51,7 +51,7 @@
       <nuxt-link :to="'/products/'+category+'/testing'">
         <div class="single-sub-category-wrapper">
           <div class="image-wrapper">
-            <img src="/test-product.jpg" alt="">
+            <img src="/main-product-2.png" alt="">
           </div>
           <div class="title-wrapper">
             <p class="title">
@@ -95,10 +95,10 @@ a {
 }
 
 .copy-wrapper {
-  margin: 1rem 0;
+  margin: 3rem 0;
 
   .copy {
-    font-size: 1.6rem;
+    font-size: 2.4rem;
     font-weight: bold;
     text-transform: none;
   }
@@ -117,13 +117,14 @@ a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 1rem;
+  padding: 2rem;
 }
 
 .title-wrapper {
+  margin-top: 2rem;
   .title{
     font-weight: bold;
-    font-size: 1.8rem;
+    font-size: 2.4rem;
   }
 }
 

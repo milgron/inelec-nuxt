@@ -128,7 +128,7 @@
     .menu-link {
       font-family: 'Din-Condensed-Bold', sans-serif;
       text-transform: uppercase;
-      font-size: 1.4rem;
+      font-size: 1.6rem;
       &:not(:first-child) {
         margin-left: 1rem;
       }
@@ -208,6 +208,9 @@
   }
 
   @media screen and (min-width: 920px){
+    .menu-link {
+      font-size: 1.6rem;
+    }
     .links-and-search-wrapper {
       display: flex;
       align-items: center;
@@ -323,5 +326,11 @@
   }
   .icons-header {
     color: $orange;
+  }
+
+  @media screen and (min-width: 1200px){
+    .menu-link {
+      font-size: 2.4rem !important;
+    }
   }
 </style>

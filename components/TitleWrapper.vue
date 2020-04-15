@@ -2,7 +2,7 @@
   <div>
     <div class="title-wrapper">
       <div class="copy">
-        <span class="wrapper" :style="[{'color': color}, {'background-color': backgroundColorString}]">
+        <span class="wrapper" :style="[{'color': color, 'background-color': backgroundColor}]">
           {{title}}
         </span>
       </div>
@@ -50,9 +50,11 @@
   margin: 1.5rem 0;
   .copy {
     .wrapper {
-      font-size: 1.8rem;
+      font-size: 2.5rem;
       text-transform: uppercase;
-      padding: .5rem;
+      padding: 1rem;
+      line-height: 1.8;
+      font-weight: bold;
     }
   }
 }

@@ -36,7 +36,9 @@
           </div>
         </div>
         <div class="map-wrapper">
-          <div class="icon"></div>
+          <div class="icon">
+            <img src="/geo.png" alt="">
+          </div>
           <p class="title">
           Argentina:<br>
           Correa 3039 (CP 1429)<br>
@@ -47,24 +49,33 @@
         <div class="contact-data-wrapper">
           <p class="title">Contacto</p>
           <div class="data-row">
-            <div class="icon"></div>
-            <p class="copy">Contenido</p>
+            <div class="icon">
+              <img src="/phone.png" alt="">
+            </div>
+            <p class="copy">+54 (011) 5272 5252</p>
           </div>
           <div class="data-row">
-            <div class="icon"></div>
-            <p class="copy">Contenido</p>
+            <div class="icon">
+              <img src="/mail.png" alt="">
+            </div>
+            <p class="copy">info@inelecsafety.com</p>
           </div>
           <div class="data-row">
-            <div class="icon"></div>
-            <p class="copy">Contenido</p>
+            <div class="icon">
+
+              <img src="/files.png" alt="">
+            </div>
+            <p class="copy">Acceda a toda la información del 
+producto, certificados y descargas 
+de instrucciones.</p>
           </div>
           <div class="data-row">
-            <img src="/logo-inelec.png" alt="" class="logo">
+            <img src="/logo-footer.png" alt="" class="logo">
           </div>
         </div>
       </div>
       <div class="logos-wrapper">
-        asd
+        <img src="/footer-icons.png" alt="">
       </div>
     </div>
   </div>
@@ -82,14 +93,18 @@
 <style lang="scss" scoped>
 @import '~assets/css/colors';
 .icon {
-  width: 30px;
-  height: 30px;
-  background: #000;
+  width: 40px;
+  height: 40px;
   margin-bottom: 1rem;
+  min-width: 12%;
+
+  img {
+    width: 100%;
+  }
 }
 
 .logos-wrapper {
-  background: $dark-gray;
+  background: $medium-gray;
   padding: 1rem;
   color: #fff;
   display: flex;
@@ -110,10 +125,11 @@
 
   .logo {
     width: 100%;
+    max-width: 30rem;
   }
 }
 .form-and-data-wrapper {
-  background: $dark-gray;
+  background: $medium-gray;
   color: #fff;
   padding: 3rem;
   display: grid;
@@ -133,6 +149,10 @@
   display: flex;
   flex-direction: column;
   margin: 1rem 0;
+
+  input {
+    color: #000;
+  }
 
   &.email-phone {
     flex-direction: row;
@@ -160,7 +180,7 @@
   margin-top: 1rem;
 
   .submit {
-    background: $medium-gray;
+    background: $dark-gray;
     text-transform: uppercase;
     color: #fff;
     padding: 1rem;

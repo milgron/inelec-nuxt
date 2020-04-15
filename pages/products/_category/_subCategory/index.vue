@@ -2,7 +2,7 @@
   <div class="main-wrapper">
     <TitleWrapper
       :title="subcategory"
-      backgroundColorString="#EF7C00"
+      backgroundColorString="orange"
       color="#202020"
     />
     <hr>
@@ -69,10 +69,10 @@ a {
 }
 
 .copy-wrapper {
-  margin: 1rem 0;
+  margin: 3rem 0;
 
   .copy {
-    font-size: 1.6rem;
+    font-size: 2.4rem;
     font-weight: bold;
     text-transform: none;
   }

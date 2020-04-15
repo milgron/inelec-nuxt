@@ -3,18 +3,19 @@
     <div class="main-products-wrapper">
       <div class="product-wrapper primary">
         <div class="image-wrapper">
-          <img src="/test-product.jpg" alt="">
+          <img src="/main-product-1.png" alt="">
         </div>
         <div class="data-wrapper">
           <div class="title-wrapper">
-            <h2 class="title"><span class="wrapper">asdasdasd</span></h2>
+            <h2 class="title"><span class="wrapper">NEW - LINKER
+WF-250XL LED FLOODLITE</span></h2>
           </div>
           <div class="subtitle-wrapper">
-            <p class="subtitle"><span class="wrapper">Lorem ipsum dolor sit amet.</span></p>
+            <p class="subtitle"><span class="wrapper">DELIVERS THE optimum light level when working on confined spaces</span></p>
           </div>
           <div class="copy-wrapper">
             <div class="copy">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur dolore quam ex, repudiandae eligendi suscipit architecto vel id cum expedita unde magni, nesciunt dolor porro, beatae facilis! Quis, fugit quam!
+              linkable sockets and low power consumption - ideal for multiple light configurations. robust, compact and lightweight - easy portable.
             </div>
           </div>
         </div>
@@ -22,37 +23,40 @@
       <div class="products-wrapper secondary">
         <div class="product-wrapper secondary-top">
           <div class="image-wrapper">
-            <img src="/test-product.jpg" alt="">
+            <img src="/main-product-2.png" alt="">
           </div>
           <div class="data-wrapper">
             <div class="new-wrapper">
               <p class="copy"><span class="wrapper">New</span></p>
             </div>
             <div class="title-wrapper">
-              <h2 class="title"><span class="wrapper">asdasdasd</span></h2>
+              <h2 class="title"><span class="wrapper">NEW PORTABLE ATEX
+VENTILATION</span></h2>
             </div>
             <div class="copy-wrapper">
               <div class="copy">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur dolore quam ex, repudiandae eligendi suscipit architecto vel id cum expedita unde magni, nesciunt dolor porro, beatae facilis! Quis, fugit quam!
-              </div>
+EXCLUSIVE UK DISTRIBUTORS OF RAMFAM
+EX VENTILATION UNITS              </div>
             </div>
           </div>
         </div>
         <div class="product-wrapper secondary-bottom">
           <div class="image-wrapper">
-            <img src="/test-product.jpg" alt="">
+            <img src="/main-product-3.png" alt="">
           </div>
           <div class="data-wrapper">
             <div class="new-wrapper">
               <p class="copy"><span class="wrapper">New</span></p>
             </div>
             <div class="title-wrapper">
-              <h2 class="title"><span class="wrapper">asdasdasd</span></h2>
+              <h2 class="title"><span class="wrapper">EMERGENCY LUMINAIRE
+LX-400E</span></h2>
             </div>
             <div class="copy-wrapper">
               <div class="copy">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur dolore quam ex, repudiandae eligendi suscipit architecto vel id cum expedita unde magni, nesciunt dolor porro, beatae facilis! Quis, fugit quam!
-              </div>
+WITH EMERGENCY BATTERY BACKUP AND
+SOVI TECHNOLOGY!
+               </div>
             </div>
           </div>
         </div>
@@ -79,6 +83,24 @@
     flex-direction: column;
     padding: 2rem;
 
+    .title-wrapper {
+      .title {
+        font-size: 4rem;
+      }
+    }
+    .subtitle-wrapper {
+      .wrapper {
+        line-height: 1.9;
+      }
+      .subtitle {
+        font-size: 1.8rem;
+      }
+    }
+    .copy-wrapper {
+      .copy {
+        font-size: 1.8rem;
+      }
+    }
     &.primary {
       background: $medium-gray;
       
@@ -130,6 +152,7 @@
   }
 
   .data-wrapper {
+    padding: .5rem;
     text-transform: uppercase;
     .copy {
       .wrapper {
@@ -142,6 +165,7 @@
 
   .image-wrapper {
     margin-bottom: 2rem;
+    max-width: 20rem;
 
     img {
       width: 100%;

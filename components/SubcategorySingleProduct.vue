@@ -1,42 +1,40 @@
 <template>
   <div class="single-product-wrapper">
     <div class="image-wrapper">
-      <img src="/test-product.jpg" alt="">
+      <img src="/handlamp-test.png" alt="">
     </div>
     <div class="data-wrapper">
       <div class="title-wrapper">
         <p class="title">
-          Product name
+          WOLFLITE XT RECHARGEABLE LED HANDLAMP
         </p>
       </div>
       <div class="data-list-wrapper">
         <ul class="data-list">
           <li class="data-item">
-            <strong>Data: </strong>
-            Lorem ipsum dolor sit.
+            <strong>Models: </strong>
+            XT-50, XT-70, XT-70MOD, XT-90, XT-75
           </li>
           <li class="data-item">
-            <strong>Data: </strong>
-            Lorem ipsum dolor sit.
+            <strong>Gas: </strong>
+            Zone: 0, 1 and 2
           </li>
           <li class="data-item">
-            <strong>Data: </strong>
-            Lorem ipsum dolor sit.
+            <strong>Dust: </strong>
+            Zone: 20, 21 and 22
           </li>
           <li class="data-item">
-            <strong>Data: </strong>
-            Lorem ipsum dolor sit.
+            <strong>Power: </strong>
+            Rechargeable
           </li>
           <li class="data-item">
-            <strong>Data: </strong>
-            Lorem ipsum dolor sit.
+            <strong>Light: </strong>
+            LED
           </li>
         </ul>
       </div>
       <div class="logos-wrapper">
-        <div class="logo"></div>
-        <div class="logo"></div>
-        <div class="logo"></div>
+        <img src="/icons-product.png" alt="">
       </div>
     </div>
   </div>
@@ -70,18 +68,19 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  padding: 2rem;
 }
 
 .data-wrapper {
   flex: 1 1;
-  padding: 1rem;
+  padding: 2rem;
   background-color: $light-gray;
 }
 
 .title-wrapper {
   .title{
     font-weight: bold;
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
 }
 
@@ -91,7 +90,7 @@
   .data-list {
     .data-item {
   text-transform: none;
-      font-size: 1.4rem;
+      font-size: 1.8rem;
     }
   }
 }
@@ -99,15 +98,11 @@
 .logos-wrapper {
   display: flex;
   flex-direction: row;
-  margin-top: 1rem;
-  .logo {
-    width: 30px;
-    height: 30px;
-    background: #000;
-    
-    &:not(:first-child) {
-      margin-left: 1rem;
-    }
+  margin-top: 2rem;
+  max-width: 20rem;
+  
+  img {
+    width: 100%;
   }
 }
 
