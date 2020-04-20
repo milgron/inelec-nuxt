@@ -66,6 +66,7 @@ a {
 }
 .main-wrapper {
   padding: 3rem;
+  background: #ddd;
 }
 
 .copy-wrapper {

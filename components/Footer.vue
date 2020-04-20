@@ -35,40 +35,44 @@
             </div>
           </div>
         </div>
-        <div class="map-wrapper">
-          <div class="icon">
-            <img src="/geo.png" alt="">
+        <div class="contact-data-wrapper">
+          <div class="data-content">
+            <div class="icon">
+              <img src="/geo.png" alt="">
+            </div>
+            <p class="title">
+            Argentina:<br>
+            Correa 3039 (CP 1429)<br>
+            Ciudad Autónoma de Buenos Aires  
+            </p> 
           </div>
-          <p class="title">
-          Argentina:<br>
-          Correa 3039 (CP 1429)<br>
-          Ciudad Autónoma de Buenos Aires  
-          </p> 
-          <div style="width: 100%; margin-top: 1rem; border: 1px solid #ddd;"><iframe width="100%" height="200" src="https://maps.google.com/maps?width=100%&height=600&hl=es&q=Correa%203039%20Buenos%20Aires+(Inelec)&ie=UTF8&t=&z=15&iwloc=B&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"><a href="https://www.mapsdirections.info/calcular-ruta.html">Calcular Ruta</a></iframe></div><br />
+          <div style="width: 100%; margin-top: 1rem; border: 1px solid #ddd; display: flex; flex-direction: column; justify-content: flex-end;"><iframe width="100%" height="200" src="https://maps.google.com/maps?width=100%&height=600&hl=es&q=Correa%203039%20Buenos%20Aires+(Inelec)&ie=UTF8&t=&z=15&iwloc=B&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"><a href="https://www.mapsdirections.info/calcular-ruta.html">Calcular Ruta</a></iframe></div>
         </div>
         <div class="contact-data-wrapper">
-          <p class="title">Contacto</p>
-          <div class="data-row">
-            <div class="icon">
-              <img src="/phone.png" alt="">
+          <div class="data-content">
+            <p class="title">Contacto</p>
+            <div class="data-row">
+              <div class="icon">
+                <img src="/phone.png" alt="">
+              </div>
+              <p class="copy">+54 (011) 5272 5252</p>
             </div>
-            <p class="copy">+54 (011) 5272 5252</p>
-          </div>
-          <div class="data-row">
-            <div class="icon">
-              <img src="/mail.png" alt="">
+            <div class="data-row">
+              <div class="icon">
+                <img src="/mail.png" alt="">
+              </div>
+              <p class="copy">info@inelecsafety.com</p>
             </div>
-            <p class="copy">info@inelecsafety.com</p>
-          </div>
-          <div class="data-row">
-            <div class="icon">
-              <img src="/files.png" alt="">
+            <div class="data-row">
+              <div class="icon">
+                <img src="/files.png" alt="">
+              </div>
+              <p class="copy">Acceda a toda la información del 
+  producto, certificados y descargas 
+  de instrucciones.</p>
             </div>
-            <p class="copy">Acceda a toda la información del 
-producto, certificados y descargas 
-de instrucciones.</p>
           </div>
-          <div class="data-row">
+          <div class="data-row logo-wrapper">
             <img src="/logo-footer.png" alt="" class="logo">
           </div>
         </div>
@@ -91,6 +95,7 @@ de instrucciones.</p>
 
 <style lang="scss" scoped>
 @import '~assets/css/colors';
+
 .icon {
   width: 40px;
   height: 40px;
@@ -130,18 +135,25 @@ de instrucciones.</p>
 .form-and-data-wrapper {
   background: $medium-gray;
   color: #fff;
-  padding: 3rem;
+  padding: 5rem;
   display: grid;
   grid-template-columns: 1fr;
 }
 
-.form-wrapper, .map-wrapper, .contact-data-wrapper {
+.form-wrapper, .contact-data-wrapper {
   margin: 1rem 0;
+}
+
+.contact-data-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .title {
   font-size: 1.6rem;
   font-weight: bold;
+  line-height: 2;
 }
 
 .form-row-wrapper {

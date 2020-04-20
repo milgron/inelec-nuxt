@@ -100,12 +100,12 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    height: 6rem;
+    height: 10rem;
     align-items: center;
     background: $light-gray;
     position: relative;
     z-index: 2;
-    padding: 1rem;
+    padding: 3rem;
     box-shadow: 0px 1px 9px rgba(50,50,50,0.5);
     overflow: hidden;
   }
@@ -220,7 +220,7 @@
       }
       &.desktop {
         display: flex;
-        transform: translateX(17rem);
+        transform: translateX(23rem);
         transition: all 400ms ease-in-out;
         
         &.is-open {
@@ -240,7 +240,7 @@
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
-      width: 20rem;
+      width: 25rem;
 
       .icons-wrapper {
         display: flex;

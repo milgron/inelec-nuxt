@@ -46,7 +46,8 @@ Medio Ambiente.</p>
 
 <style lang="scss" scoped>
 .main-wrapper {
-  padding: 3rem;
+  padding: 2rem;
+  background-color: #ddd;
 }
 .image-wrapper {
   margin: 1rem 0;
@@ -61,11 +62,11 @@ Medio Ambiente.</p>
 
   .copy-main {
     font-weight: bold;
-    font-size: 3.45rem;
+    font-size: 2.4rem;
   }
   .copy {
     margin: 1rem 0;
-    font-size: 3.45rem;
+    font-size: 2.4rem;
     line-height: 1.2;
     text-transform: none;
   }
@@ -73,7 +74,7 @@ Medio Ambiente.</p>
 
 @media screen and (min-width: 920px) {
   .main-wrapper {
-    padding: 3rem 6rem;
+    padding: 5rem 8rem;
   }
 }
 </style>

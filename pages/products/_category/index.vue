@@ -124,14 +124,14 @@ a {
   margin-top: 2rem;
   .title{
     font-weight: bold;
-    font-size: 2.4rem;
+    font-size: 3.2rem;
   }
 }
 
 @media screen and (min-width: 680px) {
   .sub-categories-wrapper {
     grid-template-columns: 1fr 1fr;
-    grid-gap: 2rem;
+    grid-gap: 3rem;
   }
 }
 @media screen and (min-width: 920px) {
@@ -140,6 +140,7 @@ a {
   }
   .sub-categories-wrapper {
     grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 4rem;
   }
 }
 </style>

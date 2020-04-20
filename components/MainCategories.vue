@@ -67,7 +67,7 @@ extension cables.          </div>
 <style lang="scss" scoped>
 @import '~assets/css/colors';
 .products-wrapper {
-  padding: 2rem;
+  padding: 5rem;
   background: $orange;
   display: grid;
   grid-template-columns: 1fr;

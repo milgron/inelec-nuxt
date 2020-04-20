@@ -197,7 +197,7 @@ a {
 }
 @media screen and (min-width: 920px) {
   .main-wrapper {
-    padding: 3rem 6rem;
+    padding: 5rem 8rem;
   }
   .sub-categories-wrapper {
     grid-template-columns: 1fr 1fr 1fr;

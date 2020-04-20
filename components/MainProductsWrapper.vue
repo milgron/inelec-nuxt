@@ -81,7 +81,7 @@ SOVI TECHNOLOGY!
   .product-wrapper {
     display: flex;
     flex-direction: column;
-    padding: 2rem;
+    padding: 3rem;
 
     .title-wrapper {
       .title {

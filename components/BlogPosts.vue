@@ -80,7 +80,7 @@ SCOTLAND          </p>
 
 <style lang="scss" scoped>
   .main-wrapper {
-    padding: 2rem;
+    padding: 5rem;
   }
   .header-wrapper {
     display: flex;

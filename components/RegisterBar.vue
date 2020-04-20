@@ -2,7 +2,7 @@
   <div>
     <div class="register-wrapper">
       <div class="copy-wrapper">
-        <p class="copy">REGÍSTRESE EN NUESTRO BOLETÍN DE CORREO ELECTRÓNICO PARA LAS ÚLTIMAS NOTICIAS Y ACTUALIZACIONES DE PRODUCTOS ...</p>
+        <p class="copy">REGÍSTRESE EN NUESTRO BOLETÍN DE CORREO ELECTRÓNICO PARA LAS ÚLTIMAS NOTICIAS Y ACTUALIZACIONES DE PRODUCTOS</p>
       </div>
       <div class="register-form-wrapper">
         <div class="register-input-wrapper">
