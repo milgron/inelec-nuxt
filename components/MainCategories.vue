@@ -84,6 +84,7 @@ extension cables.          </div>
 }
 
 .description-wrapper {
+  height: 5rem;
   .copy {
     color: #fff;
     text-align: centeR;
@@ -103,6 +104,10 @@ extension cables.          </div>
 
 .image-wrapper {
   margin-bottom: 3rem;
+  height: 15rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 @media screen and (min-width: 920px) {

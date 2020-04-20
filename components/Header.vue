@@ -116,9 +116,10 @@
     }
   }
   .links-and-search-wrapper {
-    color: #000;
+    color: $medium-gray;
     font-weight: bold;
     z-index: 1;
+    letter-spacing: 1px;
     
     a {
       text-decoration: none;
@@ -330,7 +331,7 @@
 
   @media screen and (min-width: 1200px){
     .menu-link {
-      font-size: 2.4rem !important;
+      font-size: 2.2rem !important;
     }
   }
 </style>

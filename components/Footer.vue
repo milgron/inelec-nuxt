@@ -30,7 +30,7 @@
               <label for="message">Mensaje*</label>
               <textarea name="message" cols="30" rows="10"></textarea>
             </div>
-            <div class="submit-button-wrapper">
+            <div class="submit-button-wrapper mobile">
               <button class="submit">Enviar</button>
             </div>
           </div>
@@ -75,6 +75,11 @@
           <div class="data-row logo-wrapper">
             <img src="/logo-footer.png" alt="" class="logo">
           </div>
+        </div>
+      </div>
+      <div class="submit-wrapper desktop">
+        <div class="submit-button-wrapper">
+          <button class="submit">Enviar</button>
         </div>
       </div>
       <div class="logos-wrapper">
@@ -135,13 +140,19 @@
 .form-and-data-wrapper {
   background: $medium-gray;
   color: #fff;
-  padding: 5rem;
+  padding: 5rem 5rem 1rem 5rem;
   display: grid;
   grid-template-columns: 1fr;
 }
 
 .form-wrapper, .contact-data-wrapper {
   margin: 1rem 0;
+}
+
+.form-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .contact-data-wrapper {
@@ -159,7 +170,7 @@
 .form-row-wrapper {
   display: flex;
   flex-direction: column;
-  margin: 1rem 0;
+  margin: 1rem 0 0;
 
   input {
     color: #000;
@@ -187,6 +198,7 @@
 }
 
 .submit-button-wrapper {
+  background: $medium-gray;
   margin-top: 1rem;
 
   .submit {
@@ -200,11 +212,29 @@
   }
 }
 
+.submit-wrapper.desktop{
+  display: none;
+}
+
 @media screen and (min-width: 920px) {
   .form-and-data-wrapper {
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 3rem;
     justify-content: center;
+  }  
+  .submit-wrapper.desktop {
+    display: flex;
+    background: $medium-gray;
   }
+
+  .submit-button-wrapper {
+    margin-top: 0;
+    padding-left: 5rem;
+
+    &.mobile {
+      display: none;
+    }
+  }
+  
 }
 </style>
