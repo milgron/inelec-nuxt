@@ -22,7 +22,7 @@
         backgroundColor: ''
       }
     },
-    mounted() {
+    beforeMount() {
       switch (this.backgroundColorString) {
         case 'dark-gray':
           this.backgroundColor = '#202020';
