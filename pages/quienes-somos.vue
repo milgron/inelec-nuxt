@@ -50,8 +50,10 @@ Medio Ambiente.</p>
   background-color: #ddd;
 }
 .image-wrapper {
-  margin: 1rem 0;
+  max-width: 120rem;
+  margin: 1rem auto;
   width: 100%;
+  padding: 2rem 0;
 
   img {
     width: 100%;
@@ -63,11 +65,14 @@ Medio Ambiente.</p>
   .copy-main {
     font-weight: bold;
     font-size: 2.4rem;
+    line-height: 1.5;
+    letter-spacing: 1px;
   }
   .copy {
     margin: 1rem 0;
     font-size: 2.4rem;
-    line-height: 1.2;
+    line-height: 1.5;
+    letter-spacing: 1px;
     text-transform: none;
   }
 }

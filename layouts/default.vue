@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="parent-container">
     <Header/>
     <div class="content">
       <nuxt />
@@ -25,6 +25,19 @@ export default {
 @media screen and (min-width: 920px) {
   .content {
     margin-top: 0;
+  }
+}
+@media screen and (min-width: 1500px) {
+  .parent-container {
+    background: #ddd;
+  }
+  .content {
+    width: calc(100vw - 10%);
+    margin-top: 10rem;
+    max-width: 140rem;
+    margin: auto;
+    padding: 2rem 0;
+
   }
 }
 </style>
