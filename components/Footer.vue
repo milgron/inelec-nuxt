@@ -102,15 +102,16 @@
 @import '~assets/css/colors';
 
 .icon {
-  width: 40px;
-  height: 40px;
+  width: 52px;
+  height: 52px;
   margin-bottom: 1rem;
-  min-width: 12%;
 
   img {
     width: 100%;
   }
 }
+
+
 
 .logos-wrapper {
   background: $medium-gray;
@@ -127,6 +128,10 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+
+  .copy {
+    max-width: 80%;
+  }
 
   .icon {
     margin-right: 1rem;
@@ -235,6 +240,14 @@
       display: none;
     }
   }
+  .data-content {
+  .data-row {
+    margin: 2rem 0;
+      .copy {
+        font-size: 2rem;
+      }
+  }
+}
   
 }
 </style>

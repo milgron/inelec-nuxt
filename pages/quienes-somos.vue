@@ -46,12 +46,12 @@ Medio Ambiente.</p>
 
 <style lang="scss" scoped>
 .main-wrapper {
-  padding: 2rem;
+  padding: 4rem;
   background-color: #ddd;
+  max-width: 120rem;
+  margin: auto;
 }
 .image-wrapper {
-  max-width: 120rem;
-  margin: 1rem auto;
   width: 100%;
   padding: 2rem 0;
 

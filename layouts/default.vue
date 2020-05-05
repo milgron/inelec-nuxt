@@ -23,14 +23,14 @@ export default {
 }
 
 @media screen and (min-width: 920px) {
+  .parent-container {
+    background: #ddd;
+  }
   .content {
     margin-top: 0;
   }
 }
 @media screen and (min-width: 1500px) {
-  .parent-container {
-    background: #ddd;
-  }
   .content {
     width: calc(100vw - 10%);
     margin-top: 10rem;
