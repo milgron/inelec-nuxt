@@ -57,7 +57,12 @@
               </div>
               <p class="copy">+54 (011) 5272 5252</p>
             </div>
-            
+            <div class="data-row">
+              <div class="icon">
+                <img src="/mail.png" alt="">
+              </div>
+              <p class="copy">info@inelecsafety.com</p>
+            </div>
           </div>
           <div class="data-row logo-wrapper">
             <img src="/logo-footer.png" alt="" class="logo">
