@@ -5,7 +5,7 @@
       <div class="form-and-data-wrapper">
         <div class="form-wrapper">
           <div class="title-wrapper">
-            <p class="title">¿Querés un presupuesto personalizado?</p>
+            <p class="">¿Querés un presupuesto personalizado?</p>
           </div>
           <div class="form-group">
             <div class="form-row-wrapper">
@@ -40,10 +40,10 @@
             <div class="icon">
               <img src="/geo.png" alt="">
             </div>
-            <p class="title">
-            Argentina:<br>
+            <p class="footer-direccion">
+            Dirección:<br>
             Correa 3039 (CP 1429)<br>
-            Ciudad Autónoma de Buenos Aires  
+            CABA, Argentina.
             </p> 
           </div>
           <div style="width: 100%; margin-top: 1rem; border: 1px solid #ddd; display: flex; flex-direction: column; justify-content: flex-end;"><iframe width="100%" height="200" src="https://maps.google.com/maps?width=100%&height=600&hl=es&q=Correa%203039%20Buenos%20Aires+(Inelec)&ie=UTF8&t=&z=15&iwloc=B&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"><a href="https://www.mapsdirections.info/calcular-ruta.html">Calcular Ruta</a></iframe></div>
@@ -57,20 +57,7 @@
               </div>
               <p class="copy">+54 (011) 5272 5252</p>
             </div>
-            <div class="data-row">
-              <div class="icon">
-                <img src="/mail.png" alt="">
-              </div>
-              <p class="copy">info@inelecsafety.com</p>
-            </div>
-            <div class="data-row">
-              <div class="icon">
-                <img src="/files.png" alt="">
-              </div>
-              <p class="copy">Acceda a toda la información del 
-  producto, certificados y descargas 
-  de instrucciones.</p>
-            </div>
+            
           </div>
           <div class="data-row logo-wrapper">
             <img src="/logo-footer.png" alt="" class="logo">
@@ -208,7 +195,6 @@
 
   .submit {
     background: $dark-gray;
-    text-transform: uppercase;
     color: #fff;
     padding: 1rem;
     font-size: 1.4rem;

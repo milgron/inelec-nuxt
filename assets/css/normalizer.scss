@@ -26,7 +26,6 @@ figure,
 hr {
   margin: 0;
   padding: 0;
-  text-transform: uppercase;
 }
 
 ul {
@@ -56,4 +55,14 @@ button {
   border-radius: .4rem; 
   padding: 0.75rem 1rem;
   cursor: pointer;
+}
+
+.title {
+  
+  text-transform: uppercase;
+}
+
+.footer-direccion {
+  line-height: 2;
+  font-size: 1.8rem;
 }

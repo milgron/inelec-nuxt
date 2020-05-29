@@ -19,9 +19,7 @@
         />
         <div class="excerpt-wrapper">
           <p class="copy">
-DON’T BE DAZZLED IN SMALLER CONFINED 
-SPACES - THE WF-250XL IS THE IDEAL 
-SOLUTION          </p>
+Don't be dazzled in smaller confined spaces - The WF-250XL is the ideal solution.</p>
         </div>
         <div class="read-more-wrapper">
           <div class="copy">Read more</div>
@@ -38,9 +36,7 @@ SOLUTION          </p>
         />
         <div class="excerpt-wrapper">
           <p class="copy">
-PRESS RELEASE - WOLF APPOINTED EXCLUSIVE UK 
-DISTRIBUTOR FOR RAMFAN™ - MARKET LEADER IN 
-VENTILATION FOR HAZARDOUS AREAS READ MORE          </p>
+Press realease - Wolf appointed exclusive UK distributor for RAMFAN™ - Market leader in ventilation for hazardous areas.</p>
         </div>
         <div class="read-more-wrapper">
           <div class="copy">Read more</div>
@@ -57,8 +53,7 @@ VENTILATION FOR HAZARDOUS AREAS READ MORE          </p>
         />
         <div class="excerpt-wrapper">
           <p class="copy">
-DAVID LYON APPOINTED SALES MANAGER FOR 
-SCOTLAND          </p>
+David Lyon appointed sales manager for Scotland.</p>
         </div>
         <div class="read-more-wrapper">
           <div class="copy">Read more</div>
@@ -103,8 +98,6 @@ SCOTLAND          </p>
     }
   }
   .excerpt-wrapper {
-    text-transform: uppercase;
-
     .copy {
       font-size: 2rem;
     }
@@ -114,7 +107,6 @@ SCOTLAND          </p>
 
     .copy {
       font-weight: bold;
-      text-transform: uppercase;
       font-size: 2rem;
     }
   }

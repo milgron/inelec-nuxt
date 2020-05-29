@@ -15,7 +15,7 @@ WF-250XL LED FLOODLITE</span></h2>
           </div>
           <div class="copy-wrapper">
             <div class="copy">
-              linkable sockets and low power consumption - ideal for multiple light configurations. robust, compact and lightweight - easy portable.
+              Linkable sockets and low power consumption - ideal for multiple light configurations. robust, compact and lightweight - easy portable.
             </div>
           </div>
         </div>
@@ -35,8 +35,7 @@ VENTILATION</span></h2>
             </div>
             <div class="copy-wrapper">
               <div class="copy">
-EXCLUSIVE UK DISTRIBUTORS OF RAMFAM
-EX VENTILATION UNITS              </div>
+Exclusive UK distributors of RAMFAM ex ventilation units.</div>
             </div>
           </div>
         </div>
@@ -54,8 +53,7 @@ LX-400E</span></h2>
             </div>
             <div class="copy-wrapper">
               <div class="copy">
-WITH EMERGENCY BATTERY BACKUP AND
-SOVI TECHNOLOGY!
+With emergency battery backup and SOVI technology.
                </div>
             </div>
           </div>
@@ -153,7 +151,6 @@ SOVI TECHNOLOGY!
 
   .data-wrapper {
     padding: .5rem;
-    text-transform: uppercase;
     .copy {
       .wrapper {
         margin-bottom: 2rem;
