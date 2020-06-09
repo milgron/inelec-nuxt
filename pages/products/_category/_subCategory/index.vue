@@ -49,10 +49,10 @@
     async fetch() {
       const id = parseInt(this.$route.params.subCategory)
       let products = await this.$http.$get(
-        "http://inelecdata.vidasremotas.xyz/wp-json/wp/v2/products?per_page=100"
+        "https://inelecdata.vidasremotas.xyz/wp-json/wp/v2/products?per_page=100"
       );
       let categories = await this.$http.$get(
-        "http://inelecdata.vidasremotas.xyz/wp-json/wp/v2/categories?per_page=100"
+        "https://inelecdata.vidasremotas.xyz/wp-json/wp/v2/categories?per_page=100"
       );
       this.products = await products.filter(product => {
         if(product.categories.includes(id)) {

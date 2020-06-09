@@ -41,7 +41,7 @@
     async fetch() {
       const id = 4
       let products = await this.$http.$get(
-        "http://inelecdata.vidasremotas.xyz/wp-json/wp/v2/products?per_page=100"
+        "https://inelecdata.vidasremotas.xyz/wp-json/wp/v2/products?per_page=100"
       );
       this.products = await products.filter(product => {
         if(product.categories.includes(id)) {

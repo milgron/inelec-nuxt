@@ -46,7 +46,7 @@
     },
     async fetch() {
       const products = await this.$http.$get(
-        "http://inelecdata.vidasremotas.xyz/wp-json/wp/v2/products?per_page=100"
+        "https://inelecdata.vidasremotas.xyz/wp-json/wp/v2/products?per_page=100"
       );
       const product = products.filter(singleProduct => {
         if(singleProduct.id == this.$route.params.productId) return singleProduct
@@ -55,7 +55,7 @@
       this.productContent = product[0].content.rendered
       this.productCodes = product[0].acf.codes
       const imgId = product[0].featured_media
-      const media_url = `http://inelecdata.vidasremotas.xyz/wp-json/wp/v2/media?per_page=100`
+      const media_url = `https://inelecdata.vidasremotas.xyz/wp-json/wp/v2/media?per_page=100`
       let media = await this.$http.$get(media_url);
       const filtered_media = await media.filter(singleMedia => {
         if(singleMedia.id === imgId) {
