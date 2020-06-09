@@ -1,21 +1,23 @@
 <template>
   <div class="single-product-wrapper">
     <div class="image-wrapper">
-      <img src="/handlamp-test.png" alt="">
+      <img :src="img_url" alt="">
     </div>
     <div class="data-wrapper">
       <div class="title-wrapper">
         <p class="title">
-          WOLFLITE XT RECHARGEABLE LED HANDLAMP
+          {{title}}
         </p>
       </div>
       <div class="data-list-wrapper">
         <ul class="data-list">
-          <li class="data-item">
-            <strong>Models: </strong>
-            XT-50, XT-70, XT-70MOD, XT-90, XT-75
-          </li>
-          <li class="data-item">
+          <div v-if="codes">
+            <li class="data-item">
+              <strong>Models: </strong>
+              {{codes}}
+            </li>
+          </div>
+          <!-- <li class="data-item">
             <strong>Gas: </strong>
             Zone: 0, 1 and 2
           </li>
@@ -30,7 +32,7 @@
           <li class="data-item">
             <strong>Light: </strong>
             LED
-          </li>
+          </li> -->
         </ul>
       </div>
       <div class="logos-wrapper">
@@ -42,7 +44,36 @@
 
 <script>
   export default {
-    
+    props: {
+      title: String,
+      codes: String,
+      id: Number
+    },
+    data () {
+      return {
+        img_url: ''
+      }
+    },
+    async fetch() {
+      const id = this.id
+      const url = "http://inelecdata.vidasremotas.xyz/wp-json/wp/v2/products?per_page=100";
+      let products = await this.$http.$get(url);
+      
+      const product = products.filter(singleProduct => {
+        if(singleProduct.id === id) {
+          return singleProduct
+        }
+      })
+      const imgId = await product[0].featured_media
+      const media_url = `http://inelecdata.vidasremotas.xyz/wp-json/wp/v2/media?per_page=100`
+      let media = await this.$http.$get(media_url);
+      const filtered_media = await media.filter(singleMedia => {
+        if(singleMedia.id === imgId) {
+          return singleMedia
+        }
+      })
+      this.img_url = filtered_media[0].guid.rendered.replace("inelec.local","inelecdata.vidasremotas.xyz")
+    }
   }
 </script>
 
@@ -69,6 +100,10 @@
   align-items: center;
   justify-content: center;
   padding: 2rem;
+
+  img {
+    max-width: 300px;
+  }
 }
 
 .data-wrapper {

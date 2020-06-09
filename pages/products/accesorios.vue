@@ -1,7 +1,7 @@
 <template>
   <div class="main-wrapper">
     <TitleWrapper
-      :title="category.name"
+      title="Accesorios"
       backgroundColorString="orange"
       color="#202020"
     />
@@ -24,8 +24,8 @@
 </template>
 
 <script>
-  import TitleWrapper from '../../../../components/TitleWrapper'
-  import SubcategorySingleProduct from '../../../../components/SubcategorySingleProduct'
+  import TitleWrapper from '../../components/TitleWrapper'
+  import SubcategorySingleProduct from '../../components/SubcategorySingleProduct'
   export default {
     components: {
       TitleWrapper,
@@ -38,21 +38,10 @@
         products: []
       }
     },
-    beforeMount() {
-      const category = this.$route.params.category
-      const replacedCategory = category.replace('%20',' ')
-      this.category = replacedCategory
-      const subcategory = this.$route.params.subCategory
-      const replacedSubcategory = subcategory.replace('-',' ')
-      this.subCategory = replacedSubcategory
-    },
     async fetch() {
-      const id = parseInt(this.$route.params.subCategory)
+      const id = 4
       let products = await this.$http.$get(
         "http://inelecdata.vidasremotas.xyz/wp-json/wp/v2/products?per_page=100"
-      );
-      let categories = await this.$http.$get(
-        "http://inelecdata.vidasremotas.xyz/wp-json/wp/v2/categories?per_page=100"
       );
       this.products = await products.filter(product => {
         if(product.categories.includes(id)) {

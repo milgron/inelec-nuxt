@@ -1,62 +1,24 @@
 <template>
   <div class="main-wrapper">
-    <TitleWrapper
-      :title="category"
-      backgroundColorString="orange"
-      color="#202020"
-    />
-    <hr>
+    <TitleWrapper :title="category" backgroundColorString="orange" color="#202020" />
+    <hr />
     <div class="copy-wrapper">
-      <p class="copy">
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quisquam, iste asperiores maiores dolorum eveniet commodi laborum provident omnis et impedit distinctio quae, quis aliquid totam natus hic veniam. Rerum, repellendus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos vitae ducimus illum, placeat ipsam saepe nisi expedita, consequatur delectus, enim error dolores facilis autem explicabo culpa libero deserunt? Explicabo, amet?
-      </p>
+      <p
+        class="copy"
+      >Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quisquam, iste asperiores maiores dolorum eveniet commodi laborum provident omnis et impedit distinctio quae, quis aliquid totam natus hic veniam. Rerum, repellendus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos vitae ducimus illum, placeat ipsam saepe nisi expedita, consequatur delectus, enim error dolores facilis autem explicabo culpa libero deserunt? Explicabo, amet?</p>
     </div>
     <div class="sub-categories-wrapper">
-      <nuxt-link :to="'/products/'+category+'/testing'">
+      <nuxt-link
+        :to="`/products/${category}/${childCategory.id}`"
+        v-for="childCategory in childCategories"
+        :key="childCategory.id"
+      >
         <div class="single-sub-category-wrapper">
           <div class="image-wrapper">
-            <img src="/main-product-2.png" alt="">
+            <img src="/main-product-2.png" alt />
           </div>
           <div class="title-wrapper">
-            <p class="title">
-              Category
-            </p>
-          </div>
-        </div>
-      </nuxt-link>
-      <nuxt-link :to="'/products/'+category+'/testing'">
-        <div class="single-sub-category-wrapper">
-          <div class="image-wrapper">
-            <img src="/main-product-2.png" alt="">
-          </div>
-          <div class="title-wrapper">
-            <p class="title">
-              Category
-            </p>
-          </div>
-        </div>
-      </nuxt-link>
-      <nuxt-link :to="'/products/'+category+'/testing'">
-        <div class="single-sub-category-wrapper">
-          <div class="image-wrapper">
-            <img src="/main-product-2.png" alt="">
-          </div>
-          <div class="title-wrapper">
-            <p class="title">
-              Category
-            </p>
-          </div>
-        </div>
-      </nuxt-link>
-      <nuxt-link :to="'/products/'+category+'/testing'">
-        <div class="single-sub-category-wrapper">
-          <div class="image-wrapper">
-            <img src="/main-product-2.png" alt="">
-          </div>
-          <div class="title-wrapper">
-            <p class="title">
-              Category
-            </p>
+            <p class="title">{{childCategory.category}}</p>
           </div>
         </div>
       </nuxt-link>
@@ -65,26 +27,65 @@
 </template>
 
 <script>
-  import TitleWrapper from '../../../components/TitleWrapper'
-  export default {
-    components: {
-      TitleWrapper
-    },
-    data() {
+import TitleWrapper from "../../../components/TitleWrapper";
+export default {
+  components: {
+    TitleWrapper
+  },
+  data() {
+    return {
+      category: "",
+      childCategories: []
+    };
+  },
+  mounted() {
+    const category = this.$route.params.category;
+    const replacedCategory = category.replace("-", " ");
+    this.category = replacedCategory;
+  },
+  async fetch() {
+    let categories = await this.$http.$get(
+      "http://inelecdata.vidasremotas.xyz/wp-json/wp/v2/categories?per_page=100"
+    );
+    let filteredCategories = categories.map(category => {
       return {
-        category: ''
-      }
-    },
-    mounted() {
-      const category = this.$route.params.category
-      const replacedCategory = category.replace('-',' ')
-      this.category = replacedCategory
+        id: category.id,
+        category: category.name,
+        parent: category.parent
+      };
+    });
+    let selectedCategory = this.$route.params.category
+      .toLowerCase()
+      .replace("-", " ")
+      .replace("á", "a")
+      .replace("é", "e")
+      .replace("í", "i")
+      .replace("ó", "o")
+      .replace("ú", "u");
+    switch (selectedCategory) {
+      case "iluminacion temporal":
+        this.childCategories = filteredCategories.filter(category => {
+          return category.parent == 3;
+        });
+        break;
+      case "iluminacion portatil":
+        this.childCategories = filteredCategories.filter(category => {
+          return category.parent == 2;
+        });
+        break;
+      case "accesorios":
+        this.$router.push("/products/accesorios")
+        break;
+      default:
+        break;
     }
+    console.log(childCategories);
   }
+};
 </script>
 
 <style lang="scss" scoped>
-@import '~assets/css/colors';
+@import "~assets/css/colors";
 
 a {
   text-decoration: none;
@@ -118,13 +119,15 @@ a {
   justify-content: center;
   align-items: center;
   padding: 2rem;
+  height: 400px;
 }
 
 .title-wrapper {
   margin-top: 2rem;
-  .title{
+  .title {
     font-weight: bold;
     font-size: 3.2rem;
+    text-align: center;
   }
 }
 
