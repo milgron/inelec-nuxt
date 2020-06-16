@@ -113,13 +113,21 @@ a {
 }
 
 .single-sub-category-wrapper {
-  background-color: $orange;
+  border: 2.5px solid $orange;
+  background: #fff;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 2rem;
   height: 400px;
+  transition: all 400ms ease-in-out;
+
+  &:hover {
+    transition: all 400ms ease-in-out;
+    box-shadow: 3px 3px 3px rgba(100,100,100,0.75);
+    font-size:4rem;
+  }
 }
 
 .title-wrapper {

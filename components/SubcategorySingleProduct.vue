@@ -17,22 +17,6 @@
               {{codes}}
             </li>
           </div>
-          <!-- <li class="data-item">
-            <strong>Gas: </strong>
-            Zone: 0, 1 and 2
-          </li>
-          <li class="data-item">
-            <strong>Dust: </strong>
-            Zone: 20, 21 and 22
-          </li>
-          <li class="data-item">
-            <strong>Power: </strong>
-            Rechargeable
-          </li>
-          <li class="data-item">
-            <strong>Light: </strong>
-            LED
-          </li> -->
         </ul>
       </div>
       <div class="logos-wrapper">
@@ -99,7 +83,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  padding: 2rem;
+  padding: .25rem;
 
   img {
     max-width: 300px;
