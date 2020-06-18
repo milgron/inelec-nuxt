@@ -8,57 +8,30 @@
       />
     </div>
     <div class="news-wrapper">
-      <div class="post-wrapper">
-        <div class="image-wrapper">
-          <img src="/test-quienes-somos.jpg" alt="">
-        </div>
-        <TitleWrapper 
-          title="04/12/1991"
-          color="#EF7C00"
-          background="dark-gray"
-        />
-        <div class="excerpt-wrapper">
-          <p class="copy">
-Don't be dazzled in smaller confined spaces - The WF-250XL is the ideal solution.</p>
-        </div>
-        <div class="read-more-wrapper">
-          <div class="copy">Read more</div>
-        </div>
-      </div>
-      <div class="post-wrapper">
-        <div class="image-wrapper">
-          <img src="/test-quienes-somos.jpg" alt="">
-        </div>
-        <TitleWrapper 
-          title="04/12/1991"
-          color="#EF7C00"
-          background="dark-gray"
-        />
-        <div class="excerpt-wrapper">
-          <p class="copy">
-Press realease - Wolf appointed exclusive UK distributor for RAMFAN™ - Market leader in ventilation for hazardous areas.</p>
-        </div>
-        <div class="read-more-wrapper">
-          <div class="copy">Read more</div>
+      <div v-for="post in posts" :key="post.id">
+        <div class="post-wrapper">
+          <div class="image-wrapper">
+            <img :src="post.featured_media" alt="">
+          </div>
+          <TitleWrapper 
+            :title="post.title.rendered"
+            color="#EF7C00"
+            background="dark-gray"
+          />
+          <div class="excerpt-wrapper">
+            <div class="copy" v-html="`${post.excerpt.rendered.substring(0,100)} [...]`"></div>
+          </div>
+          <div class="read-more-wrapper">
+            <div class="copy">
+              <nuxt-link :to="`/blog/${post.id}`">
+                Read more
+              </nuxt-link>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="post-wrapper">
-        <div class="image-wrapper">
-          <img src="/test-quienes-somos.jpg" alt="">
-        </div>
-        <TitleWrapper 
-          title="04/12/1991"
-          color="#EF7C00"
-          background="dark-gray"
-        />
-        <div class="excerpt-wrapper">
-          <p class="copy">
-David Lyon appointed sales manager for Scotland.</p>
-        </div>
-        <div class="read-more-wrapper">
-          <div class="copy">Read more</div>
-        </div>
-      </div>
+
+
     </div>
   </div>
 </template>
@@ -68,8 +41,24 @@ David Lyon appointed sales manager for Scotland.</p>
   export default {
     components: {
       TitleWrapper
+    },
+    props: {
+      posts: Array,
+    },
+    data() {
+      return {
+        media: []
+      }
+    },
+    beforeMount() {
+      this.$axios.get("https://inelecdata.vidasremotas.xyz/wp-json/wp/v2/media")
+      .then(response => {
+        this.media = response.data.filter(post => {
+          if(post.id == 115) return post;
+        })
+      })
     }
-    
+        
   }
 </script>
 
@@ -108,6 +97,11 @@ David Lyon appointed sales manager for Scotland.</p>
     .copy {
       font-weight: bold;
       font-size: 2rem;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
     }
   }
 

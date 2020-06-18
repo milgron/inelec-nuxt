@@ -72,7 +72,7 @@
 }
 
 .single-product-wrapper {
-  background-color: $orange;
+  background-color: #fff;
   display: flex;
   flex-direction: column;
   margin: 2rem 0;
@@ -84,6 +84,7 @@
   align-items: center;
   justify-content: center;
   padding: .25rem;
+    border: 2px solid $orange;
 
   img {
     max-width: 300px;

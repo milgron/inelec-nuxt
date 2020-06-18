@@ -6,11 +6,6 @@
       color="#202020"
     />
     <hr>
-    <div class="copy-wrapper">
-      <p class="copy">
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quisquam, iste asperiores maiores dolorum eveniet commodi laborum provident omnis et impedit distinctio quae, quis aliquid totam natus hic veniam. Rerum, repellendus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos vitae ducimus illum, placeat ipsam saepe nisi expedita, consequatur delectus, enim error dolores facilis autem explicabo culpa libero deserunt? Explicabo, amet?
-      </p>
-    </div>
     <div class="sub-categories-wrapper">
       <nuxt-link :to="`/product/${product.id}`" v-for="product in products" :key="product.id">
         <SubcategorySingleProduct 

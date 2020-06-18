@@ -6,11 +6,13 @@
           <img src="/main-categories-1.png" alt="">
         </div>
         <div class="copy-wrapper">
+          <nuxt-link to="/products/iluminacion-portatil">
           <TitleWrapper 
             title="portable lighting"
             color="#FFF"
             backgroundColorString="dark-gray"
           />
+          </nuxt-link>
           <div class="description-wrapper">
             <div class="copy">
   handlamps, torches and headtorches          </div>
@@ -22,11 +24,13 @@
           <img src="/main-categories-2.png" alt="">
         </div>
         <div class="copy-wrapper">
-          <TitleWrapper 
-            title="temporary lighting"
-            color="#FFF"
-            backgroundColorString="dark-gray"
-          />
+          <nuxt-link to="/products/iluminacion-temporal">
+            <TitleWrapper 
+              title="temporary lighting"
+              color="#FFF"
+              backgroundColorString="dark-gray"
+            />
+          </nuxt-link>
           <div class="description-wrapper">
             <div class="copy">
   Luminaires, floodlites, tank lighting kits, handheld
@@ -39,11 +43,13 @@
           <img src="/main-categories-3.png" alt="">
         </div>
         <div class="copy-wrapper">
+          <nuxt-link to="/products/iluminacion-temporal/15">
           <TitleWrapper 
-          title="temporary power distribution"
-          color="#FFF"
-          backgroundColorString="dark-gray"
-        />
+            title="temporary power distribution"
+            color="#FFF"
+            backgroundColorString="dark-gray"
+          />
+        </nuxt-link>
         <div class="description-wrapper">
           <div class="copy">
 Transformers, splitter boxes, cable reels and
@@ -99,6 +105,10 @@ extension cables.          </div>
 
   .copy {
     font-size: 1.6rem;
+  }
+
+  a {
+    text-decoration: none;
   }
 }
 

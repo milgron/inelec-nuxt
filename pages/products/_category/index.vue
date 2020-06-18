@@ -3,9 +3,7 @@
     <TitleWrapper :title="category" backgroundColorString="orange" color="#202020" />
     <hr />
     <div class="copy-wrapper">
-      <p
-        class="copy"
-      >Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quisquam, iste asperiores maiores dolorum eveniet commodi laborum provident omnis et impedit distinctio quae, quis aliquid totam natus hic veniam. Rerum, repellendus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos vitae ducimus illum, placeat ipsam saepe nisi expedita, consequatur delectus, enim error dolores facilis autem explicabo culpa libero deserunt? Explicabo, amet?</p>
+      <p class="copy">{{categoryCopy}}</p>
     </div>
     <div class="sub-categories-wrapper">
       <nuxt-link
@@ -15,7 +13,7 @@
       >
         <div class="single-sub-category-wrapper">
           <div class="image-wrapper">
-            <img src="/main-product-2.png" alt />
+            <img :src="childCategory.image_url ? childCategory.image_url : '/main-product-2.png'" alt />
           </div>
           <div class="title-wrapper">
             <p class="title">{{childCategory.category}}</p>
@@ -35,13 +33,25 @@ export default {
   data() {
     return {
       category: "",
-      childCategories: []
+      childCategories: [],
+      categoryCopy: ''
     };
   },
   mounted() {
     const category = this.$route.params.category;
     const replacedCategory = category.replace("-", " ");
     this.category = replacedCategory;
+    switch (category) {
+      case "iluminacion-portatil":
+        this.categoryCopy = "WOLF SAFETY OFRECE LA GAMA MÁS AMPLIA DE ILUMINACIÓN DE ÁREA PELIGROSA CERTIFICADA ATEX E IECEX PARA USO SEGURO EN ATMÓSFERAS POTENCIALMENTE EXPLOSIVAS EN TODO EL MUNDO.LA GAMA INCLUYE LINTERNAS DE MANO A PRUEBA DE EXPLOSIÓN, FAROS Y MANGUERAS, INCLUYENDO LA RENOVADA MANILLAR WOLFLITE, CON VERSIÓN DE BOMBILLA Y LED PARA USO CON CÉLULAS PRIMARIAS O BATERÍAS Y CARGADORES RECARGABLES."
+        break;
+      case "iluminacion-temporal":
+        this.categoryCopy = "WOLF SAFETY OFRECE LA GAMA MÁS AMPLIA DE ILUMINACIÓN DE ÁREA PELIGROSA TEMPORAL CERTIFICADA ATEX E IECEX PARA UN USO SEGURO EN ATMÓSFERAS POTENCIALMENTE EXPLOSIVAS EN TODO EL MUNDO. LA GAMA INCLUYE REDES PROTEGIDAS DE EXPLOSIÓN Y LUMINARIAS TEMPORALES FLUORESCENTES Y LED DE BAJO VOLTAJE Y LUCES DE INUNDACIÓN, KITS DE ILUMINACIÓN DE TANQUE, LÁMPARAS DE MANO, LUCES DE TRABAJO LED OPERADAS CON BATERÍA Y LÁMPARAS NEUMÁTICAS OPERADAS CON AIRE COMPRIMIDO."
+        break;
+    
+      default:
+        break;
+    }
   },
   async fetch() {
     let categories = await this.$http.$get(
@@ -51,7 +61,8 @@ export default {
       return {
         id: category.id,
         category: category.name,
-        parent: category.parent
+        parent: category.parent,
+        image_url: category.acf.image ? category.acf.image.url : false
       };
     });
     let selectedCategory = this.$route.params.category
@@ -136,6 +147,12 @@ a {
     font-weight: bold;
     font-size: 3.2rem;
     text-align: center;
+  }
+}
+
+.image-wrapper {
+  img {
+    width: 100%;
   }
 }
 
