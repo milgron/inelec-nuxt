@@ -5,7 +5,7 @@
         <div class="copy">SOMOS DISTRIBUIDORES DEL FABRICANTE LÍDER MUNDIAL DE ILUMINACIÓN PORTÁTIL Y TEMPORAL DE ÁREAS PELIGROSAS</div>
       </div>
       <div class="icons-wrapper">
-        <img src="" alt="">
+        <img src="/icons-inelec.png" alt="">
       </div>
     </div>
   </div>
@@ -31,5 +31,8 @@
     text-transform: uppercase;
     font-size: 2.2rem;
   }
+}
+.icons-wrapper {
+  margin-left: 1.5rem;
 }
 </style>

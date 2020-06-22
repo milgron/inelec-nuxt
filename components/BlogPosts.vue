@@ -13,14 +13,13 @@
           <div class="image-wrapper">
             <img :src="post.featured_media" alt="">
           </div>
-          <TitleWrapper 
-            :title="post.title.rendered"
-            color="#EF7C00"
-            background="dark-gray"
-          />
-          <div class="excerpt-wrapper">
-            <div class="copy" v-html="`${post.excerpt.rendered.substring(0,100)} [...]`"></div>
+          <div class="date-wrapper">
+            <span class="date">{{post.date}}</span>
           </div>
+          <h2 class="post-title">{{post.title.rendered}}</h2>
+          <!-- <div class="excerpt-wrapper">
+            <div class="copy" v-html="`${post.excerpt.rendered.substring(0,100)} [...]`"></div>
+          </div> -->
           <div class="read-more-wrapper">
             <div class="copy">
               <nuxt-link :to="`/blog/${post.id}`">
@@ -92,16 +91,32 @@
     }
   }
   .read-more-wrapper {
-    margin-top: 1rem;
+    margin-top: 2rem;
 
     .copy {
-      font-weight: bold;
-      font-size: 2rem;
+      font-weight: 700;
+      font-size: 1.6rem;
+      text-transform: uppercase;
     }
 
     a {
       text-decoration: none;
       color: inherit;
+    }
+  }
+
+  .post-title {
+    font-size: 1.8rem;
+  }
+  .date-wrapper {
+    margin-bottom: 2rem;
+
+    .date {
+    background: #202020;
+    color: #fff;
+    padding: 1rem;
+    font-size: 1.4rem;
+
     }
   }
 

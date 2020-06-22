@@ -19,9 +19,9 @@
           </div>
         </ul>
       </div>
-      <div class="logos-wrapper">
+      <!-- <div class="logos-wrapper">
         <img src="/icons-product.png" alt="">
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
@@ -84,7 +84,6 @@
   align-items: center;
   justify-content: center;
   padding: .25rem;
-    border: 2px solid $orange;
 
   img {
     max-width: 300px;
@@ -101,6 +100,7 @@
   .title{
     font-weight: bold;
     font-size: 2rem;
+    text-transform: none !important;
   }
 }
 

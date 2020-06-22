@@ -8,7 +8,7 @@
     <hr>
     <div class="copy-wrapper">
       <p class="copy">
-        OFRECEMOS UNA AMPLIA SELECCIÓN DE ACCESORIOS PARA CARGAR, PROTEGER, FIJAR Y MONTAR NUESTRA GAMA DE ILUMINACIÓN PORTÁTIL Y TEMPORAL.
+        Ofrecemos una amplia selección de accesorios para cargar, proteger, fijar y montar nuestra gama de iluminación portátil y temporal.
       </p>
     </div>
     <div class="sub-categories-wrapper">

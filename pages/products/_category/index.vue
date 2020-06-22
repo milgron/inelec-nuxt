@@ -43,10 +43,10 @@ export default {
     this.category = replacedCategory;
     switch (category) {
       case "iluminacion-portatil":
-        this.categoryCopy = "WOLF SAFETY OFRECE LA GAMA MÁS AMPLIA DE ILUMINACIÓN DE ÁREA PELIGROSA CERTIFICADA ATEX E IECEX PARA USO SEGURO EN ATMÓSFERAS POTENCIALMENTE EXPLOSIVAS EN TODO EL MUNDO.LA GAMA INCLUYE LINTERNAS DE MANO A PRUEBA DE EXPLOSIÓN, FAROS Y MANGUERAS, INCLUYENDO LA RENOVADA MANILLAR WOLFLITE, CON VERSIÓN DE BOMBILLA Y LED PARA USO CON CÉLULAS PRIMARIAS O BATERÍAS Y CARGADORES RECARGABLES."
+        this.categoryCopy = "Wolf safety ofrece la gama más amplia de iluminación de área peligrosa certificada atex e iecex para uso seguro en atmósferas potencialmente explosivas en todo el mundo.la gama incluye linternas de mano a prueba de explosión, faros y mangueras, incluyendo la renovada manillar wolflite, con versión de bombilla y led para uso con células primarias o baterías y cargadores recargables."
         break;
       case "iluminacion-temporal":
-        this.categoryCopy = "WOLF SAFETY OFRECE LA GAMA MÁS AMPLIA DE ILUMINACIÓN DE ÁREA PELIGROSA TEMPORAL CERTIFICADA ATEX E IECEX PARA UN USO SEGURO EN ATMÓSFERAS POTENCIALMENTE EXPLOSIVAS EN TODO EL MUNDO. LA GAMA INCLUYE REDES PROTEGIDAS DE EXPLOSIÓN Y LUMINARIAS TEMPORALES FLUORESCENTES Y LED DE BAJO VOLTAJE Y LUCES DE INUNDACIÓN, KITS DE ILUMINACIÓN DE TANQUE, LÁMPARAS DE MANO, LUCES DE TRABAJO LED OPERADAS CON BATERÍA Y LÁMPARAS NEUMÁTICAS OPERADAS CON AIRE COMPRIMIDO."
+        this.categoryCopy = "Wolf safety ofrece la gama más amplia de iluminación de área peligrosa temporal certificada atex e iecex para un uso seguro en atmósferas potencialmente explosivas en todo el mundo. la gama incluye redes protegidas de explosión y luminarias temporales fluorescentes y led de bajo voltaje y luces de inundación, kits de iluminación de tanque, lámparas de mano, luces de trabajo led operadas con batería y lámparas neumáticas operadas con aire comprimido."
         break;
     
       default:
@@ -90,7 +90,6 @@ export default {
       default:
         break;
     }
-    console.log(childCategories);
   }
 };
 </script>
@@ -111,7 +110,6 @@ a {
 
   .copy {
     font-size: 2.4rem;
-    font-weight: bold;
     text-transform: none;
   }
 }
@@ -124,7 +122,6 @@ a {
 }
 
 .single-sub-category-wrapper {
-  border: 2.5px solid $orange;
   background: #fff;
   display: flex;
   flex-direction: column;
@@ -145,8 +142,9 @@ a {
   margin-top: 2rem;
   .title {
     font-weight: bold;
-    font-size: 3.2rem;
+    font-size: 3rem;
     text-align: center;
+    text-transform: none;
   }
 }
 

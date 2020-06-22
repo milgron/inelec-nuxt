@@ -19,14 +19,14 @@
       <div v-html="productContent" class="copy"></div>
     </div>
 
-    <div class="download-wrapper">
+    <!-- <div class="download-wrapper">
       <div class="download-icon">
         <img src="/files.png" alt="">
       </div>
       <button class="download-button">
         DESCARGAS Y RECURSOS
       </button>
-    </div>
+    </div> -->
   </div>
 </template>
 

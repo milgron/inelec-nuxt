@@ -93,6 +93,11 @@
 <style lang="scss" scoped>
 @import '~assets/css/colors';
 
+.columns-wrapper {
+  max-width: 1024px;
+  margin: auto;
+}
+
 .icon {
   width: 52px;
   height: 52px;
@@ -132,6 +137,7 @@
   .logo {
     width: 100%;
     max-width: 30rem;
+    margin-bottom: 5rem;
   }
 }
 .form-and-data-wrapper {

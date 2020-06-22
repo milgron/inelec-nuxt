@@ -61,7 +61,7 @@
       </nuxt-link>
       <div class="search-wrapper-mobile">
         <input type="text" name="" class="search-input" v-model="searchInput">
-        <button class="submit-search" @click.prevent="submitSearch">Buscar</button>
+          <button class="submit-search">Buscar</button>
       </div>
     </div>
   </div>
@@ -87,7 +87,7 @@
         this.isDesktopSearchOpen = !this.isDesktopSearchOpen
       },
       submitSearch() {
-        console.log('Buscaste esto: ', this.searchInput)
+        this.$router.push({path: `/busqueda/${this.searchInput}`})
       }
     }
     
