@@ -34,7 +34,7 @@
             </div>
           </div>
           <input type="text" name="" class="search-input" v-model="searchInput">
-          <button class="submit-search" @click.prevent="submitSearch">Buscar</button>
+          <button class="submit-search">Buscar</button>
         </div>
       </div>
       <div class="menu-button-wrapper" @click="mobileMenuButtonHandler">
