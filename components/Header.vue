@@ -34,7 +34,7 @@
             </div>
           </div>
           <input type="text" name="" class="search-input" v-model="searchInput">
-          <button class="submit-search">Buscar</button>
+          <button class="submit-search" @click.prevent="submitSearch">Buscar</button>
         </div>
       </div>
       <div class="menu-button-wrapper" @click="mobileMenuButtonHandler">
@@ -61,7 +61,7 @@
       </nuxt-link>
       <div class="search-wrapper-mobile">
         <input type="text" name="" class="search-input" v-model="searchInput">
-          <button class="submit-search">Buscar</button>
+          <button class="submit-search" @click.prevent="submitSearch">Buscar</button>
       </div>
     </div>
   </div>
