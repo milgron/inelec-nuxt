@@ -29,7 +29,7 @@
     },
     beforeMount() {
       let featuredMedia = []
-      this.$axios.get("https://inelecdata.vidasremotas.xyz/wp-json/wp/v2/posts")
+      this.$axios.get("https://data.inelecsafety.com.ar/wp-json/wp/v2/posts")
       .then(response => {
         this.posts = response.data.map(post => {
           let date = moment(post.date).format('DD-MM-YYYY')

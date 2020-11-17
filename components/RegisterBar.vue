@@ -6,10 +6,10 @@
       </div>
       <div class="register-form-wrapper">
         <div class="register-input-wrapper">
-          <input type="text" name="email" placeholder="email">
+          <input type="text" name="email" placeholder="email" v-model="email">
         </div>
         <div class="register-button-wrapper">
-          <button class="register-button">Regístrate</button>
+          <button class="register-button" @click.prevent="submit">Regístrate</button>
         </div>
       </div>
     </div>
@@ -18,7 +18,26 @@
 
 <script>
   export default {
-    
+    data() {
+      return {
+        email: ''
+      }
+    },
+    methods: {
+      submit() {
+        const SteinStore = require("stein-js-client");
+        const store = new SteinStore(
+          "https://api.steinhq.com/v1/storages/5f04cf13383a60054639522c"
+        );
+
+        store
+        .append("Inelec-subscribe", [
+          {
+            email: this.email
+          }
+        ]);
+      }
+    }
   }
 </script>
 

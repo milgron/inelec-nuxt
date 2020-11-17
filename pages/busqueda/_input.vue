@@ -31,7 +31,7 @@
     },
     async beforeMount() {
       let categories;
-      await this.$axios.get("https://inelecdata.vidasremotas.xyz/wp-json/wp/v2/categories?per_page=100")
+      await this.$axios.get("https://data.inelecsafety.com.ar/wp-json/wp/v2/categories?per_page=100")
       .then(response => {
         categories = response.data.map(category => {
           return {
@@ -41,7 +41,7 @@
           }
         })
       })
-      await this.$axios.get("https://inelecdata.vidasremotas.xyz/wp-json/wp/v2/products?per_page=100")
+      await this.$axios.get("https://data.inelecsafety.com.ar/wp-json/wp/v2/products?per_page=100")
       .then(response => {
         let allProducts = response.data.map(product => {
           let category_name = ""

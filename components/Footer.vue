@@ -10,28 +10,34 @@
           <div class="form-group">
             <div class="form-row-wrapper">
               <label for="name">Nombre*</label>
-              <input type="text" name="name" id="">
+              <input type="text" name="name" id="" v-model="name">
             </div>
             <div class="form-row-wrapper email-phone">
               <div class="email-input-wrapper">
                 <label for="email">Email*</label>
-                <input type="text" name="email" id="">
+                <input type="text" name="email" id="" v-model="email">
               </div>
               <div class="phone-input-wrapper">
                 <label for="phone">Teléfono*</label>
-                <input type="text" name="phone" id="">
+                <input type="text" name="phone" id="" v-model="phone">
               </div>
             </div>
             <div class="form-row-wrapper">
               <label for="company">Empresa*</label>
-              <input type="text" name="company" id="">
+              <input type="text" name="company" id="" v-model="company">
             </div>
             <div class="form-row-wrapper">
               <label for="message">Mensaje*</label>
-              <textarea name="message" cols="30" rows="10"></textarea>
+              <textarea name="message" cols="30" rows="10" v-model="message"></textarea>
             </div>
             <div class="submit-button-wrapper mobile">
-              <button class="submit">Enviar</button>
+              <button class="submit" @click.prevent="submit">Enviar</button>
+              <div v-show="sended" class="alert-wrapper">
+                <p class="alert-submit">El mensaje ha sido enviado</p>
+              </div>
+              <div v-show="enviando" class="alert-wrapper">
+                <p class="alert-submit">El mensaje está siendo enviado</p>
+              </div>
             </div>
           </div>
         </div>
@@ -46,7 +52,12 @@
             CABA, Argentina.
             </p> 
           </div>
-          <div style="width: 100%; margin-top: 1rem; border: 1px solid #ddd; display: flex; flex-direction: column; justify-content: flex-end;"><iframe width="100%" height="200" src="https://maps.google.com/maps?width=100%&height=600&hl=es&q=Correa%203039%20Buenos%20Aires+(Inelec)&ie=UTF8&t=&z=15&iwloc=B&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"><a href="https://www.mapsdirections.info/calcular-ruta.html">Calcular Ruta</a></iframe></div>
+          <div class="map-wrapper">
+            <img src="/mapa_inelec.jpg" alt="mapa-inelec">
+            <div class="link-button-wrapper">
+              <a href="https://maps.google.com/maps?ll=-34.545968,-58.478877&z=15&t=m&hl=es&gl=US&mapclient=embed&q=Correa%203039%20Buenos%20Aires" target="_blank">Ver Google Maps</a>
+            </div>
+          </div>
         </div>
         <div class="contact-data-wrapper">
           <div class="data-content">
@@ -71,7 +82,13 @@
       </div>
       <div class="submit-wrapper desktop">
         <div class="submit-button-wrapper">
-          <button class="submit">Enviar</button>
+          <button class="submit"  @click.prevent="submit">Enviar</button>
+        </div>
+        <div v-show="sended"  class="alert-wrapper">
+          <p class="alert-submit">El mensaje ha sido enviado</p>
+        </div>
+        <div v-show="enviando" class="alert-wrapper">
+          <p class="alert-submit">El mensaje está siendo enviado</p>
         </div>
       </div>
       <div class="logos-wrapper">
@@ -83,18 +100,48 @@
 
 <script>
   import RegisterBar from '../components/RegisterBar'
+  import axios from 'axios'
   export default {
     components: {
       RegisterBar
+    },
+    data() {
+      return {
+        name: '',
+        email: '',
+        phone: '',
+        company: '',
+        message: '',
+        sended: false,
+        enviando: false
+      }
+    },
+    methods: {
+      async submit() {
+        this.enviando = true;
+        await axios.post('https://thepipeline.xyz/api/mailer', {
+          name: this.name,
+          email: this.email,
+          phone: this.phone,
+          company: this.company,
+          message: this.message,
+          usr_code: "352AAt$axx__"
+        }).then(res => res.json())
+        .catch(error => console.error('Error:', error))
+        .then(response => {
+          this.enviando = false;
+          this.sended = true;
+        });
+      }
     }
   }
 </script>
 
 <style lang="scss" scoped>
 @import '~assets/css/colors';
-
 .columns-wrapper {
-  max-width: 1024px;
+  max-width: 100%;
+  padding: 2rem;
   margin: auto;
 }
 
@@ -107,8 +154,6 @@
     width: 100%;
   }
 }
-
-
 
 .logos-wrapper {
   background: $medium-gray;
@@ -146,6 +191,7 @@
   padding: 5rem 5rem 1rem 5rem;
   display: grid;
   grid-template-columns: 1fr;
+  width: 100%;
 }
 
 .form-wrapper, .contact-data-wrapper {
@@ -156,6 +202,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  max-width: 80%;
 }
 
 .contact-data-wrapper {
@@ -175,7 +222,7 @@
   flex-direction: column;
   margin: 1rem 0 0;
 
-  input {
+  input,textarea {
     color: #000;
   }
 
@@ -218,6 +265,36 @@
   display: none;
 }
 
+.map-wrapper {
+  position: relative; 
+  img {
+    width: 100%;
+  }
+}
+
+.link-button-wrapper {
+  position: absolute; 
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  max-width: 150px;
+  background: #fff;
+  padding: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  box-shadow: 3px 3px 3px rgba($color: #000000, $alpha: 0.5);
+
+  a {
+    text-decoration: none;
+    color: #000;
+    text-align: center;
+    font-size: 1.4rem;
+  }
+
+}
+
 @media screen and (min-width: 920px) {
   .form-and-data-wrapper {
     grid-template-columns: 1fr 1fr 1fr;
@@ -244,6 +321,18 @@
         font-size: 2rem;
       }
   }
+}
+
+.alert-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding-left: 1rem;
+}
+
+.alert-submit {
+  color: #fff;
 }
   
 }

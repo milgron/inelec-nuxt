@@ -40,7 +40,7 @@
     },
     async fetch() {
       const id = this.id
-      const url = "https://inelecdata.vidasremotas.xyz/wp-json/wp/v2/products?per_page=100";
+      const url = "https://data.inelecsafety.com.ar/wp-json/wp/v2/products?per_page=100";
       let products = await this.$http.$get(url);
       
       const product = products.filter(singleProduct => {
@@ -49,14 +49,14 @@
         }
       })
       const imgId = await product[0].featured_media
-      const media_url = `https://inelecdata.vidasremotas.xyz/wp-json/wp/v2/media?per_page=100`
+      const media_url = `https://data.inelecsafety.com.ar/wp-json/wp/v2/media?per_page=100`
       let media = await this.$http.$get(media_url);
       const filtered_media = await media.filter(singleMedia => {
         if(singleMedia.id === imgId) {
           return singleMedia
         }
       })
-      this.img_url = filtered_media[0].guid.rendered.replace("inelec.local","inelecdata.vidasremotas.xyz")
+      this.img_url = filtered_media[0].guid.rendered.replace("inelec.local","data.inelecsafety.com.ar")
     }
   }
 </script>

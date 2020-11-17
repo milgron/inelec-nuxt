@@ -50,7 +50,7 @@
       }
     },
     beforeMount() {
-      this.$axios.get("https://inelecdata.vidasremotas.xyz/wp-json/wp/v2/media")
+      this.$axios.get("https://data.inelecsafety.com.ar/wp-json/wp/v2/media")
       .then(response => {
         this.media = response.data.filter(post => {
           if(post.id == 115) return post;

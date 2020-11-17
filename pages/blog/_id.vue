@@ -34,7 +34,7 @@
       }
     },
     beforeMount() {
-      this.$axios.get("https://inelecdata.vidasremotas.xyz/wp-json/wp/v2/posts")
+      this.$axios.get("https://data.inelecsafety.com.ar/wp-json/wp/v2/posts")
       .then(response => {
         let post = response.data.filter(post => {
           if(post.id == this.id) {

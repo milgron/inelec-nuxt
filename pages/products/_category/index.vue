@@ -55,7 +55,7 @@ export default {
   },
   async fetch() {
     let categories = await this.$http.$get(
-      "https://inelecdata.vidasremotas.xyz/wp-json/wp/v2/categories?per_page=100"
+      "https://data.inelecsafety.com.ar/wp-json/wp/v2/categories?per_page=100"
     );
     let filteredCategories = categories.map(category => {
       return {

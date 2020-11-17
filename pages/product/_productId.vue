@@ -9,9 +9,9 @@
     <div class="models-wrapper">
       <p class="models">{{productCodes}}</p>
     </div>
-    <div class="logos-wrapper">
+    <!-- <div class="logos-wrapper">
       <img src="/icons-product.png" alt="">
-    </div>
+    </div> -->
     <div class="image-wrapper">
       <img :src="img_url" alt="">
     </div>
@@ -19,14 +19,16 @@
       <div v-html="productContent" class="copy"></div>
     </div>
 
-    <!-- <div class="download-wrapper">
+    <div class="download-wrapper" v-if="file_url">
       <div class="download-icon">
         <img src="/files.png" alt="">
       </div>
-      <button class="download-button">
-        DESCARGAS Y RECURSOS
-      </button>
-    </div> -->
+      <a :href="file_url" download>
+        <button class="download-button">
+          DESCARGAS Y RECURSOS
+        </button>
+      </a>
+    </div>
   </div>
 </template>
 
@@ -41,12 +43,13 @@
         productTitle: "",
         productContent: "",
         productCodes: "",
+        file_url: "",
         img_url: ""
       }
     },
     async fetch() {
       const products = await this.$http.$get(
-        "https://inelecdata.vidasremotas.xyz/wp-json/wp/v2/products?per_page=100"
+        "https://data.inelecsafety.com.ar/wp-json/wp/v2/products?per_page=100"
       );
       const product = products.filter(singleProduct => {
         if(singleProduct.id == this.$route.params.productId) return singleProduct
@@ -54,15 +57,16 @@
       this.productTitle = product[0].title.rendered
       this.productContent = product[0].content.rendered
       this.productCodes = product[0].acf.codes
+      this.file_url = product[0].acf.documentacion
       const imgId = product[0].featured_media
-      const media_url = `https://inelecdata.vidasremotas.xyz/wp-json/wp/v2/media?per_page=100`
+      const media_url = `https://data.inelecsafety.com.ar/wp-json/wp/v2/media?per_page=100`
       let media = await this.$http.$get(media_url);
       const filtered_media = await media.filter(singleMedia => {
         if(singleMedia.id === imgId) {
           return singleMedia
         }
       })
-      this.img_url = filtered_media[0].guid.rendered.replace("inelec.local","inelecdata.vidasremotas.xyz")
+      this.img_url = filtered_media[0].guid.rendered.replace("inelec.local","data.inelecsafety.com.ar")
      }
   }
 </script>
