@@ -5,22 +5,25 @@
     <div class="copy-wrapper">
       <p class="copy">{{categoryCopy}}</p>
     </div>
-    <div class="sub-categories-wrapper">
-      <nuxt-link
-        :to="`/products/${category}/${childCategory.id}`"
-        v-for="childCategory in childCategories"
-        :key="childCategory.id"
-      >
-        <div class="single-sub-category-wrapper">
-          <div class="image-wrapper">
-            <img :src="childCategory.image_url ? childCategory.image_url : '/main-product-2.png'" alt />
+    <div v-if="category"> 
+      <div class="sub-categories-wrapper">
+        <nuxt-link
+          :to="`/products/${category}/${childCategory.id}`"
+          v-for="childCategory in childCategories"
+          :key="childCategory.id"
+        >
+          <div class="single-sub-category-wrapper">
+            <div class="image-wrapper">
+              <img :src="childCategory.image_url ? childCategory.image_url : '/main-product-2.png'" alt />
+            </div>
+            <div class="title-wrapper">
+              <p class="title">{{childCategory.category}}</p>
+            </div>
           </div>
-          <div class="title-wrapper">
-            <p class="title">{{childCategory.category}}</p>
-          </div>
-        </div>
-      </nuxt-link>
+        </nuxt-link>
+      </div>
     </div>
+    
   </div>
 </template>
 
@@ -37,23 +40,7 @@ export default {
       categoryCopy: ''
     };
   },
-  mounted() {
-    const category = this.$route.params.category;
-    const replacedCategory = category.replace("-", " ");
-    this.category = replacedCategory;
-    switch (category) {
-      case "iluminacion-portatil":
-        this.categoryCopy = "Wolf safety ofrece la gama más amplia de iluminación de área peligrosa certificada atex e iecex para uso seguro en atmósferas potencialmente explosivas en todo el mundo.la gama incluye linternas de mano a prueba de explosión, faros y mangueras, incluyendo la renovada manillar wolflite, con versión de bombilla y led para uso con células primarias o baterías y cargadores recargables."
-        break;
-      case "iluminacion-temporal":
-        this.categoryCopy = "Wolf safety ofrece la gama más amplia de iluminación de área peligrosa temporal certificada atex e iecex para un uso seguro en atmósferas potencialmente explosivas en todo el mundo. la gama incluye redes protegidas de explosión y luminarias temporales fluorescentes y led de bajo voltaje y luces de inundación, kits de iluminación de tanque, lámparas de mano, luces de trabajo led operadas con batería y lámparas neumáticas operadas con aire comprimido."
-        break;
-    
-      default:
-        break;
-    }
-  },
-  async fetch() {
+  async beforeMount() {
     let categories = await this.$http.$get(
       "https://data.inelecsafety.com.ar/wp-json/wp/v2/categories?per_page=100"
     );
@@ -87,6 +74,21 @@ export default {
       case "accesorios":
         this.$router.push("/products/accesorios")
         break;
+      default:
+        break;
+    }
+
+    const category = this.$route.params.category;
+    const replacedCategory = category.replace("-", " ");
+    this.category = replacedCategory;
+    switch (category) {
+      case "iluminacion-portatil":
+        this.categoryCopy = "Wolf safety ofrece la gama más amplia de iluminación de área peligrosa certificada atex e iecex para uso seguro en atmósferas potencialmente explosivas en todo el mundo.la gama incluye linternas de mano a prueba de explosión, faros y mangueras, incluyendo la renovada manillar wolflite, con versión de bombilla y led para uso con células primarias o baterías y cargadores recargables."
+        break;
+      case "iluminacion-temporal":
+        this.categoryCopy = "Wolf safety ofrece la gama más amplia de iluminación de área peligrosa temporal certificada atex e iecex para un uso seguro en atmósferas potencialmente explosivas en todo el mundo. la gama incluye redes protegidas de explosión y luminarias temporales fluorescentes y led de bajo voltaje y luces de inundación, kits de iluminación de tanque, lámparas de mano, luces de trabajo led operadas con batería y lámparas neumáticas operadas con aire comprimido."
+        break;
+    
       default:
         break;
     }

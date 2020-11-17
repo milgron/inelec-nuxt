@@ -1,33 +1,38 @@
 <template>
   <div class="main-wrapper">
-    <TitleWrapper
-      :title="productTitle"
-      backgroundColorString="orange"
-      color="#202020"
-    />
-    <hr>
-    <div class="models-wrapper">
-      <p class="models">{{productCodes}}</p>
-    </div>
-    <!-- <div class="logos-wrapper">
-      <img src="/icons-product.png" alt="">
-    </div> -->
-    <div class="image-wrapper">
-      <img :src="img_url" alt="">
-    </div>
-    <div class="copy-wrapper">
-      <div v-html="productContent" class="copy"></div>
-    </div>
-
-    <div class="download-wrapper" v-if="file_url">
-      <div class="download-icon">
-        <img src="/files.png" alt="">
+    <div v-show="id !== undefined">
+      <TitleWrapper
+        :title="productTitle"
+        backgroundColorString="orange"
+        color="#202020"
+      />
+      <hr>
+      <div class="models-wrapper">
+        <p class="models">{{productCodes}}</p>
       </div>
-      <a :href="file_url" download>
-        <button class="download-button">
-          DESCARGAS Y RECURSOS
-        </button>
-      </a>
+      <!-- <div class="logos-wrapper">
+        <img src="/icons-product.png" alt="">
+      </div> -->
+      <div class="image-wrapper">
+        <img :src="img_url" alt="">
+      </div>
+      <div class="copy-wrapper">
+        <div v-html="productContent" class="copy"></div>
+      </div>
+
+      <div class="download-wrapper" v-if="file_url">
+        <div class="download-icon">
+          <img src="/files.png" alt="">
+        </div>
+        <a :href="file_url" download>
+          <button class="download-button">
+            DESCARGAS Y RECURSOS
+          </button>
+        </a>
+      </div>
+    </div>
+    <div v-show="id == undefined">
+      <p>Produto no encontrado</p>
     </div>
   </div>
 </template>
@@ -44,16 +49,18 @@
         productContent: "",
         productCodes: "",
         file_url: "",
-        img_url: ""
+        img_url: "",
+        id: ""
       }
     },
-    async fetch() {
+    async beforeMount() {
       const products = await this.$http.$get(
         "https://data.inelecsafety.com.ar/wp-json/wp/v2/products?per_page=100"
       );
       const product = products.filter(singleProduct => {
         if(singleProduct.id == this.$route.params.productId) return singleProduct
       })
+      console.log(product.id)
       this.productTitle = product[0].title.rendered
       this.productContent = product[0].content.rendered
       this.productCodes = product[0].acf.codes
